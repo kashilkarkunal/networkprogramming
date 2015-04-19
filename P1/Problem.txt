@@ -1,0 +1,11 @@
+1. Consider a parent process P which takes L on command-line and creates three
+processes C1,C2, and C3.
+2. C1 sends a signal SIGUSR1 to C2 after every 3 seconds.
+3. C2 sends a signal SIGUSR2 to C3 after every 6 seconds.
+4. C3 sends a signal SIGUSR1 to C1 after every 9 seconds.
+5. Every time any child receives a signal it sends SIGINT to parent P and the child
+prints its pid and the signal number received. P counts the number of signals
+received. When number of signals equal L, parent sends SIGTERM to C1. When
+number of signals equal L+3, parent sends SIGTERM to C2. When number of
+signals equal L+6, parent sends SIGTERM to C3.
+6. When SIGTERM is received, child exits.
