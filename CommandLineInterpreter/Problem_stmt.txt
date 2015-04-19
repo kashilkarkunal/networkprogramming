@@ -1,0 +1,11 @@
+Implement a command line interpreter or shell. The shell takes in a command from user at its prompt and executes it and then prompts for more input from user.
+
+1. shell should execute a command using fork()and execve() calls. It should not use temporary files, popen(), or system() calls. It should not use sh or bash shells to execute a command. Once the command is completed it should print its pid and
+status.
+
+2. Shell should support <, >, and >> redirection operators.
+
+3. Shell should support pipelining any number of commands. E.g.: ls|wc|wc, cat x| grep pat| uniq| sort
+
+4. Shell should support two new pipeline operators "||" and "|||". E.g.: ls -l || grep ^-, grep ^d . It means that output of ls -l command is passed as input to two other commands. Similarly "|||" means, output of one command is passed as
+input to three other commands separated by ",".
